@@ -4,18 +4,25 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="manifest.json">
-    <link rel="apple-touch-icon" href="images/icon-512.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="stylesheet.css">
     <title>じゃんけん</title>
     <script src="app.js"></script>
 </head>
 <body>
-    <input type="button" value="おみくじを引く！" onclick="omikuji();" id="playBtn">
-    <div>
-        <div id="msgHeading" style="opacity: 0;">おみくじの結果は........</div>
+    <input type="button" value="出す手を決めてください。" onclick="omikuji();" id="playBtn" class="msg">
+    <div class="msg">
+        <div id="msgHeading" style="opacity: 0;">相手の手は....</div>
         <div id="msg1"></div>
         <div id="msg2"></div>
     </div>
-    <input type="button" value="リセット！" id="resetBtn" onclick="reset();" disabled="disabled">
+    <input type="button" value="もう一度やる" id="resetBtn" class="msg" onclick="reset();" disabled="disabled">
+
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener("load", function() {
